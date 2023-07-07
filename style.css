@@ -1,0 +1,89 @@
+/*
+  Jasmine Testing Exercise
+  Unit #7 of Springboard SWE Bootcamp
+   
+  Solution by José Delpino
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(to right, #007bff, #007bff00);
+  color: white;
+  text-align: left;
+  margin: 10px 10px;
+}
+
+main {
+  margin: 20px 20px 20px 40px;
+  max-width: 800px;
+}
+
+h1 {
+  text-align: left;
+  padding: 20px;
+  color: white;
+  margin-bottom: 40px;
+}
+
+h1 .subtitle {
+  display: block;
+  font-size: 0.5em;
+  color: #fff;
+}
+
+h1 .byline {
+  display: block;
+  font-size: 0.4em;
+  color: #ccc;
+  font-style: italic;
+}
+
+h2 {
+  color: #007bff;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 10px 20px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16),
+    0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.clarification-box {
+  margin: 20px 20px 20px 40px;
+  padding: 15px;
+  background-color: #fff8cd;
+  border: 1px solid #ffeb8e;
+  border-radius: px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16),
+    0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+  color: #333; /* Dark text for readability */
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.clarification-box h2 {
+  color: #f77f00; /* A dark orange */
+}
