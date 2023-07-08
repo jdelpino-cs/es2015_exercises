@@ -1,0 +1,88 @@
+<!--
+  ES2015 Exercises
+  Unit #10 of Springboard SWE Bootcamp
+   
+  Solutions by José Delpino
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES2015 Exercises (Let & Const)</title>
+    <link rel="stylesheet" href="../style.css">
+    <script defer src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>ES2015 Exercises (Let & Const)
+            <span class="subtitle">Unit #10 of Springboard SWE Bootcamp</span>
+            <span class="byline">Solutions by José Delpino</span>
+        </h1>
+    </header>
+    <main>
+        <section id="assignments">
+            <h2>Let & Const</h2>
+            <h3>Quiz</h3>
+            <ol class="text-box">
+                <li>
+                    <em>What is the difference between <strong>var</strong> and
+                        <strong>let</strong>?</em>
+                    <p>
+                        The main difference is that <strong>var</strong> is function-scoped,
+                        while <strong>let</strong> is block-scoped. Also, contrary to <strong>var</strong>,
+                        <strong>let</strong> cannot be re-declare within the same scope. Finally,
+                        <strong>let</strong> is not hoisted and is not part of the window object.
+                    </p>
+                </li>
+
+                <li>
+                    <em>What is the difference between <strong>var</strong> and
+                        <strong>const</strong>?</em>
+                    <p>
+                        <strong>const</strong> shares the same differences than <strong>let</strong> within
+                        <strong>var</strong>. Additionally, <strong>const</strong> cannot be re-assigned.
+                    </p>
+                </li>
+                <li>
+                    <em>What is the difference between <strong>let</strong> and
+                        <strong>const</strong>?</em>
+                    <p>
+                        <strong>let</strong> can be re-assigned, while <strong>const</strong> cannot.
+                    </p>
+                </li>
+                <li>
+                    <em>What is hoisting?</em>
+                    <p>
+                        Hoisting meants that you can use a hoisted variable ebfore it's being declared,
+                        because JavaScript moves all variable and function declarations to the top of the
+                        current scope. However, the variable is not initialized, so it will return
+                        undefined. While this is true for <strong>var</strong>, this is not the case with
+                        with <strong>let</strong> and <strong>const</strong>.
+
+                    </p>
+                </li>
+            </ol>
+
+            <h3>Excercise: Refactoring Global Constants</h3>
+            <div class="text-box">
+                <h4>ES5 Global Constants</h4>
+                <pre class="prettyprint lang-js">
+                    <code class="language-javascript">
+var PI = 3.14;
+PI = 42; // stop me from doing this!
+                    </code>
+                </pre>
+                <h4>ES2015 Global Constants</h4>
+                <pre class="prettyprint lang-js">
+                    <code class="language-javascript">
+const PI = 3.14; // This is the right way!
+                    </code>
+        </section>
+    </main>
+</body>
+
+</html>
