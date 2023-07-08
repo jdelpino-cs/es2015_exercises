@@ -1,0 +1,83 @@
+<!--
+  ES2015 Exercises
+  Unit #10 of Springboard SWE Bootcamp
+   
+  Solutions by José Delpino
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES2015 Exercises (Arrow Functions)</title>
+    <link rel="stylesheet" href="../style.css">
+    <script defer src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>ES2015 Exercises (Arrow Functions)
+            <span class="subtitle">Unit #10 of Springboard SWE Bootcamp</span>
+            <span class="byline">Solutions by José Delpino</span>
+        </h1>
+    </header>
+    <main>
+        <section id="assignments">
+            <h3>Excercise: Refactoring Global Constants</h3>
+            <div class="text-box">
+                <h4>Refactoring #1</h4>
+                <h5>ES5 Map Callback</h5>
+                <pre class="prettyprint lang-js">
+                    <code class="language-javascript">
+function double(arr) {
+    return arr.map(function(val) {
+        return val * 2;
+    });
+}
+                    </code>
+                </pre>
+
+                <h5>ES2015 Arrow Functions Shorthand</h5>
+                <pre class="prettyprint lang-js">
+                    <code class="language-javascript">
+function double(arr) {
+    return arr.map(val => val * 2);
+}
+                    </code>
+            </div>
+
+            <div class="text-box">
+                <h4>Refactoring #2</h4>
+                <h5>Original using ES5</h5>
+                <pre class="prettyprint lang-js">
+                    <code class="language-javascript">
+function squareAndFindEvens(numbers){
+    var squares = numbers.map(function(num){
+        return num ** 2;
+    });
+    var evens = squares.filter(function(square){
+        return square % 2 === 0;
+    });
+    return evens;
+}
+                    </code>
+                </pre>
+
+                <h5>Refactored with ES2015</h5>
+                <pre class="prettyprint lang-js">
+                    <code class="language-javascript">
+function squareAndFindEvens(numbers){
+    return numbers
+        .map(number => number ** 2) // Squares
+        .filter(square => square % 2 === 0); // Evens
+}
+                    </code>
+                </pre>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
