@@ -238,12 +238,18 @@ class CreateAnimal2 {
 // [5] Destructuring
 
 // [5.1] Questions
-// [5.1.1] Object Destructuring 1
-// [5.1.2] Object Destructuring 2
-// [5.1.3] Object Destructuring 3
-// [5.1.4] Array Destructuring 1
-// [5.1.5] Array Destructuring 2
-// [5.1.6] Array Destructuring 3
+// [5.1.1] Object Destructuring 1. What does the following code return/print?
+let facts = { numPlanets: 8, yearNeptuneDiscovered: 1846 };
+let { numPlanets, yearNeptuneDiscovered } = facts;
+
+console.log(numPlanets); // ?
+console.log(yearNeptuneDiscovered); // ?
+
+// [5.1.2] Object Destructuring 2. What does the following code return/print?
+// [5.1.3] Object Destructuring 3. What does the following code return/print?
+// [5.1.4] Array Destructuring 1. What does the following code return/print?
+// [5.1.5] Array Destructuring 2. What does the following code return/print?
+// [5.1.6] Array Destructuring 3. What does the following code return/print?
 
 // [5.2] ES2015 Refactoring
 
