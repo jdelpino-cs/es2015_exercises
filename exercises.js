@@ -161,17 +161,22 @@ function createInstructor(firstName, lastName) {
 
 const favoriteNumber = 42;
 
-const instructor = {
+const instructor1 = {
   firstName: "Colt",
 };
 
-instructor[favoriteNumber] = "That is my favorite!";
+instructor1[favoriteNumber] = "That is my favorite!";
 
 // [4.4] Computed Property Names ES2015
 
+const instructor1_ES2015 = {
+  firstName: "Colt",
+  [favoriteNumber]: "That is my favorite!",
+};
+
 // [4.5] Object Methods
 
-const instructor = {
+const instructor2 = {
   firstName: "Colt",
   sayHi: function () {
     return "Hi!";
@@ -182,8 +187,26 @@ const instructor = {
 };
 
 // [4.6] Object Methods ES2015
+const instructor2_ES2015 = {
+  firstName: "Colt",
+  sayHi() {
+    return "Hi!";
+  },
+  sayBye() {
+    return this.firstName + " says bye!";
+  },
+};
 
 // [4.7] createAnimal function
+
+function createAnimal(species, noiseAction, noise) {
+  return {
+    species,
+    [noiseAction]() {
+      console.log(noise);
+    },
+  };
+}
 
 const d = createAnimal("dog", "bark", "Woooof!");
 // {species: "dog", bark: ƒ}
@@ -192,6 +215,25 @@ d.bark(); //"Woooof!"
 const s = createAnimal("sheep", "bleet", "BAAAAaaaa");
 // {species: "sheep", bleet: ƒ}
 s.bleet(); //"BAAAAaaaa"
+
+// [4.8] If you want to use a real object constructor,
+// you cannot take advantage of the property shorthands:
+
+function CreateAnimal1(species, noiseAction, noise) {
+  this.species = species;
+  this[noiseAction] = function () {
+    console.log(noise);
+  };
+}
+
+class CreateAnimal2 {
+  constructor(species, noiseAction, noise) {
+    this.species = species;
+    this[noiseAction] = function () {
+      console.log(noise);
+    };
+  }
+}
 
 // Destructuring
 
