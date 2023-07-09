@@ -358,10 +358,24 @@ console.log(raceResults(["Tom", "Margaret", "Allison", "David", "Pierre"]));
 // [6] Maps & Sets
 
 // [6.1] Questions
-// [6.1.1] Quick Question 1
-// [6.1.2] Quick Question 2
-// [6.1.3] Quick Question 3
+// [6.1.1] Quick Question 1. What does the following code return?
+new Set([1, 1, 2, 2, 3, 4]); //
+// [6.1.2] Quick Question 2. What does the following code return?
+[...new Set("referee")].join(""); //
+// [6.1.3] Quick Question 3. What does the Map m look like after running the following code?
+let m = new Map();
+m.set([1, 2, 3], true);
+m.set([1, 2, 3], false);
 
-// [6.2] ES2015 Refactoring
-// [6.2.1] hasDuplicate
-// [6.2.2] vowelCount
+// [6.2] hasDuplicate –––> Write a function called hasDuplicate which accepts
+// an array and returns true or false if that array contains a duplicate.
+
+// hasDuplicate([1,3,2,1]) // true
+// hasDuplicate([1,5,-1,4]) // false
+
+// [6.3] vowelCount ––––> Write a function called vowelCount which accepts
+// a string and returns a map where the keys are numbers and the values are
+// the count of the vowels in the string.
+
+// vowelCount('awesome') // Map { 'a' => 1, 'e' => 2, 'o' => 1 }
+// vowelCount('Colt') // Map { 'o' => 1 }
