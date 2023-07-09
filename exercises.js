@@ -159,9 +159,9 @@ function createInstructor(firstName, lastName) {
 
 // [4.3] Computed Property Names
 
-var favoriteNumber = 42;
+const favoriteNumber = 42;
 
-var instructor = {
+const instructor = {
   firstName: "Colt",
 };
 
@@ -171,7 +171,7 @@ instructor[favoriteNumber] = "That is my favorite!";
 
 // [4.5] Object Methods
 
-var instructor = {
+const instructor = {
   firstName: "Colt",
   sayHi: function () {
     return "Hi!";
