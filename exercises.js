@@ -235,6 +235,31 @@ class CreateAnimal2 {
   }
 }
 
-// Destructuring
+// [5] Destructuring
 
-// Maps & Sets
+// [5.1] Questions
+// [5.1.1] Object Destructuring 1
+// [5.1.2] Object Destructuring 2
+// [5.1.3] Object Destructuring 3
+// [5.1.4] Array Destructuring 1
+// [5.1.5] Array Destructuring 2
+// [5.1.6] Array Destructuring 3
+
+// [5.2] ES2015 Refactoring
+
+// [5.2.1] ES5 Assigning Variables to Object Properties
+// [5.2.2] ES2015 Object Destructuring
+// [5.2.3] ES5 Array Swap
+// [5.2.4] ES2015 One-Line Array Swap with Destructuring
+// [5.2.5] raceResults ()
+
+// [6] Maps & Sets
+
+// [6.1] Questions
+// [6.1.1] Quick Question 1
+// [6.1.2] Quick Question 2
+// [6.1.3] Quick Question 3
+
+// [6.2] ES2015 Refactoring
+// [6.2.1] hasDuplicate
+// [6.2.2] vowelCount
