@@ -144,7 +144,54 @@ function update(obj, key, val) {
   }
 }
 
-// Object Enhacement
+// [4] Object Enhacement
+
+// [4.1] Same keys and values
+
+function createInstructor(firstName, lastName) {
+  return {
+    firstName: firstName,
+    lastName: lastName,
+  };
+}
+
+// [4.2] Same keys and values ES2015
+
+// [4.3] Computed Property Names
+
+var favoriteNumber = 42;
+
+var instructor = {
+  firstName: "Colt",
+};
+
+instructor[favoriteNumber] = "That is my favorite!";
+
+// [4.4] Computed Property Names ES2015
+
+// [4.5] Object Methods
+
+var instructor = {
+  firstName: "Colt",
+  sayHi: function () {
+    return "Hi!";
+  },
+  sayBye: function () {
+    return this.firstName + " says bye!";
+  },
+};
+
+// [4.6] Object Methods ES2015
+
+// [4.7] createAnimal function
+
+const d = createAnimal("dog", "bark", "Woooof!");
+// {species: "dog", bark: ƒ}
+d.bark(); //"Woooof!"
+
+const s = createAnimal("sheep", "bleet", "BAAAAaaaa");
+// {species: "sheep", bleet: ƒ}
+s.bleet(); //"BAAAAaaaa"
 
 // Destructuring
 
