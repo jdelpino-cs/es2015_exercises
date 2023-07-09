@@ -242,22 +242,118 @@ class CreateAnimal2 {
 let facts = { numPlanets: 8, yearNeptuneDiscovered: 1846 };
 let { numPlanets, yearNeptuneDiscovered } = facts;
 
-console.log(numPlanets); // ?
-console.log(yearNeptuneDiscovered); // ?
+console.log(numPlanets); // 8
+console.log(yearNeptuneDiscovered); // 1846
 
 // [5.1.2] Object Destructuring 2. What does the following code return/print?
+let planetFacts = {
+  numPlanets: 8,
+  yearNeptuneDiscovered: 1846,
+  yearMarsDiscovered: 1659,
+};
+
+let { numPlanets: numPlanets2, ...discoveryYears } = planetFacts;
+
+console.log(discoveryYears); // {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
+
 // [5.1.3] Object Destructuring 3. What does the following code return/print?
+function getUserData({ firstName, favoriteColor = "green" }) {
+  return `Your name is ${firstName} and you like ${favoriteColor}`;
+}
+
+getUserData({ firstName: "Alejandro", favoriteColor: "purple" }); // ?
+getUserData({ firstName: "Melissa" }); // 'Your name is Alejandro and you like purple'
+getUserData({}); // 'Your name is undefined and you like green'
+
 // [5.1.4] Array Destructuring 1. What does the following code return/print?
+let [first, second, third] = ["Maya", "Marisa", "Chi"];
+
+console.log(first); // "Maya"
+console.log(second); // "Marisa"
+console.log(third); // "Chi"
+
 // [5.1.5] Array Destructuring 2. What does the following code return/print?
+let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [
+  "Raindrops on roses",
+  "whiskers on kittens",
+  "Bright copper kettles",
+  "warm woolen mittens",
+  "Brown paper packages tied up with strings",
+];
+
+console.log(raindrops); // "Raindrops on roses"
+console.log(whiskers); // "whiskers on kittens"
+console.log(aFewOfMyFavoriteThings); // ["Bright copper kettles",
+//                                       "warm woolen mittens",
+//                                       "Brown paper packages tied up with strings",]
+
 // [5.1.6] Array Destructuring 3. What does the following code return/print?
+let numbers = [10, 20, 30];
+[numbers[1], numbers[2]] = [numbers[2], numbers[1]];
+
+console.log(numbers); // [10, 30, 20]
 
 // [5.2] ES2015 Refactoring
 
 // [5.2.1] ES5 Assigning Variables to Object Properties
+let obj = {
+  numbers: {
+    a: 1,
+    b: 2,
+  },
+};
+
+// let a = obj.numbers.a;
+// let b = obj.numbers.b;
+
 // [5.2.2] ES2015 Object Destructuring
+let {
+  numbers: { a, b },
+} = obj;
+
+// [5.2.2.1] ES2015 Object Destructuring & Swapping at the same time
+// let {
+//   numbers: { a:b, b:a },
+// } = obj;
+
 // [5.2.3] ES5 Array Swap
+var arr = [1, 2];
+// var temp = arr[0];
+// arr[0] = arr[1];
+// arr[1] = temp;
+
 // [5.2.4] ES2015 One-Line Array Swap with Destructuring
-// [5.2.5] raceResults ()
+[arr[1], arr[0]] = [arr[0], arr[1]];
+
+// [5.2.5] Function raceResults –––> Write a function called raceResults
+// which accepts a single array argument. It should return an object
+// with the keys first, second, third, and rest.
+
+//        - first: the first element in the array
+//        - second: the second element in the array
+//        - third: the third element in the array
+//        - rest: all other elements in the array
+
+// Write a one line function to make this work using
+//        - An arrow function
+//        - Destructuring
+//        - Enhanced object assignment (same key/value shortcut)
+
+raceResults = ([first, second, third, ...rest]) => {
+  ({ first, second, third, rest });
+}; // Prettier automatic formattin don't let me put all this in just one line!!!!
+
+// Versions using no arro fuction:
+// function raceResults([first, second, third, ...rest]) {
+//   return {
+//     first,
+//     second,
+//     third,
+//     rest,
+//   };
+// }
+
+console.log(raceResults(["Tom", "Margaret", "Allison", "David", "Pierre"]));
 
 // [6] Maps & Sets
 
