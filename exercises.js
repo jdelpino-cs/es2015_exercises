@@ -359,23 +359,75 @@ console.log(raceResults(["Tom", "Margaret", "Allison", "David", "Pierre"]));
 
 // [6.1] Questions
 // [6.1.1] Quick Question 1. What does the following code return?
-new Set([1, 1, 2, 2, 3, 4]); //
+new Set([1, 1, 2, 2, 3, 4]); // Set(4) {1, 2, 3, 4}
 // [6.1.2] Quick Question 2. What does the following code return?
-[...new Set("referee")].join(""); //
-// [6.1.3] Quick Question 3. What does the Map m look like after running the following code?
+[...new Set("referee")].join(""); // "ref"
+// [6.1.3] Quick Question 3. What does the Map m look like after running
+// the following code?
 let m = new Map();
 m.set([1, 2, 3], true);
-m.set([1, 2, 3], false);
+m.set([1, 2, 3], false); // m kye value contents are:
+//                       ––> Map(2) {[1,2,3] : true, [1,2,3]] : false}
 
 // [6.2] hasDuplicate –––> Write a function called hasDuplicate which accepts
 // an array and returns true or false if that array contains a duplicate.
 
-// hasDuplicate([1,3,2,1]) // true
-// hasDuplicate([1,5,-1,4]) // false
+function hasDuplicate(array) {
+  setFromArray = new Set(array);
+  return setFromArray.size === array.length ? false : true;
+}
+
+console.log(hasDuplicate([1, 3, 2, 1])); // true
+console.log(hasDuplicate([1, 5, -1, 4])); // false
+console.log(hasDuplicate([])); // false
+console.log(hasDuplicate([1])); // false
 
 // [6.3] vowelCount ––––> Write a function called vowelCount which accepts
 // a string and returns a map where the keys are numbers and the values are
 // the count of the vowels in the string.
 
-// vowelCount('awesome') // Map { 'a' => 1, 'e' => 2, 'o' => 1 }
-// vowelCount('Colt') // Map { 'o' => 1 }
+/**
+ * This function counts the frequency of each vowel in a given string.
+ *
+ * Input -> string - The input string in which vowels are to be counted.
+ * Returns -> Map - A Map object where keys are vowels
+ *                  and values are their corresponding frequency
+ *                  in the input string.
+ */
+function vowelCount(string) {
+  // Initialize a Set object with all vowels.
+  const vowels = new Set("aeiou");
+
+  // Convert the input string to lowercase and spread it into an array.
+  const lowerCaseString = [...string.toLowerCase()];
+
+  // Use the reduce method to create a Map (vowelCounter),
+  // where keys are vowels and values are their frequencies.
+  const vowelCounter = lowerCaseString.reduce(
+    (vowelCounter, char) => {
+      // Check what's the current frequency of each vowel
+      // in the Map.
+      if (vowels.has(char)) {
+        const frequency = vowelCounter.get(char);
+
+        // Adjust the vowel frequency in each case.
+        vowelCounter.set(char, (frequency || 0) + 1);
+      }
+
+      // Return the updated Map as the accumulator for the next iteration.
+      return vowelCounter;
+    },
+    new Map() // Initialize the accumulator as an empty Map.
+  );
+
+  // Return the final Map.
+  return vowelCounter;
+}
+
+console.log(vowelCount("awesome")); // Map { 'a' => 1, 'e' => 2, 'o' => 1 }
+console.log(vowelCount("Colt")); // Map { 'o' => 1 }
+console.log(vowelCount("Supercaliofragilisticoespialidoso")); // Map {'u' => 1,
+//                                                                    'e' => 2,
+//                                                                    'a' => 3,
+//                                                                    'i' => 6,
+//                                                                    'o' => 4}
